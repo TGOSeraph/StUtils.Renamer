@@ -1,0 +1,94 @@
+﻿using StUtil.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using System.Xml;
+using StUtil.Native.Extensions;
+using System.Diagnostics;
+using StUtil.UI.Utilities;
+using StUtil.UI.Controls;
+
+namespace StUtils.Renamer
+{
+    public partial class Form1 : Form
+    {
+        private ColorFaderLabel currentSelectedLabel;
+        private Dictionary<Label, Control> pages = new Dictionary<Label, Control>();
+
+        public Form1()
+        {
+            InitializeComponent();
+
+            currentSelectedLabel = lblSelectFiles;
+
+            this.lblSelectFiles.MouseEnter += colorFaderLabel_MouseEnter;
+            this.lblSelectFiles.MouseLeave += colorFaderLabel_MouseLeave;
+            this.lblSelectFiles.Click += colorFaderLabel_Click;
+            AddPage(this.lblSelectFiles, new SelectFilesPage());
+
+            this.lblDefineExpressions.MouseEnter += colorFaderLabel_MouseEnter;
+            this.lblDefineExpressions.MouseLeave += colorFaderLabel_MouseLeave;
+            this.lblDefineExpressions.Click += colorFaderLabel_Click;
+            AddPage(this.lblDefineExpressions, new ExpressionsPage());
+
+            this.lblPreview.MouseEnter += colorFaderLabel_MouseEnter;
+            this.lblPreview.MouseLeave += colorFaderLabel_MouseLeave;
+            this.lblPreview.Click += colorFaderLabel_Click;
+            AddPage(this.lblPreview, new ExpressionsPage());
+
+            this.lblRename.MouseEnter += colorFaderLabel_MouseEnter;
+            this.lblRename.MouseLeave += colorFaderLabel_MouseLeave;
+            this.lblRename.Click += colorFaderLabel_Click;
+            AddPage(this.lblRename, new ExpressionsPage());
+        }
+
+        private void AddPage(Label lbl, Control page)
+        {
+            page.Dock = DockStyle.Fill;
+            if (pages.Count > 0)
+            {
+                page.Visible = false;
+            }
+            pnlStage.Controls.Add(page);
+            pages.Add(lbl, page);
+        }
+
+        private void colorFaderLabel_Click(object sender, EventArgs e)
+        {
+            ColorFaderLabel lbl = (ColorFaderLabel)sender;
+            if (lbl != currentSelectedLabel)
+            {
+                pages[currentSelectedLabel].Visible = false;
+                pages[lbl].Visible = true;
+
+                currentSelectedLabel.ForeColor = this.ForeColor;
+                currentSelectedLabel = lbl;
+                currentSelectedLabel.ForeColor = SystemColors.Highlight;
+            }
+        }
+
+        private void colorFaderLabel_MouseLeave(object sender, EventArgs e)
+        {
+            ColorFaderLabel lbl = (ColorFaderLabel)sender;
+            if (lbl == currentSelectedLabel)
+            {
+                lbl.ForeColor = SystemColors.Highlight;
+            }
+            else
+            {
+                lbl.ForeColor = this.ForeColor;
+            }
+        }
+        private void colorFaderLabel_MouseEnter(object sender, EventArgs e)
+        {
+            ColorFaderLabel lbl = (ColorFaderLabel)sender;
+            if (lbl != currentSelectedLabel)
+            {
+                lbl.ForeColor = Color.Orange;
+            }
+        }
+    }
+}
