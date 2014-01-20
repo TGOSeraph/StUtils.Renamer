@@ -35,9 +35,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Cyotek.Windows.Forms.ImageBox">
-      <HintPath>..\..\StUtils.ImageViewer\bin\Debug\Cyotek.Windows.Forms.ImageBox.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -110,19 +107,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\StUtil\StUtil.Core\StUtil.Core.csproj">
+    <ProjectReference Include="..\..\..\APIs\StUtil\StUtil.Core\StUtil.Core.csproj">
       <Project>{23be9e56-b59d-48c2-9aca-336b591c8fe4}</Project>
       <Name>StUtil.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\StUtil\StUtil.Native\StUtil.Native.csproj">
+    <ProjectReference Include="..\..\..\APIs\StUtil\StUtil.Native\StUtil.Native.csproj">
       <Project>{ff84f30f-a046-4325-8e3b-8362193250a8}</Project>
       <Name>StUtil.Native</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\StUtil\StUtil.UI\StUtil.UI.csproj">
+    <ProjectReference Include="..\..\..\APIs\StUtil\StUtil.UI\StUtil.UI.csproj">
       <Project>{d82c9d9c-eb79-4c4b-afbf-60811f1540e0}</Project>
       <Name>StUtil.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\StUtil\StUtilEx.RegexParser\StUtilEx.RegexParser.csproj">
+    <ProjectReference Include="..\..\..\APIs\StUtil\StUtilEx.RegexParser\StUtilEx.RegexParser.csproj">
       <Project>{c0fae9fe-6051-4d54-9a74-362e31ff928f}</Project>
       <Name>StUtilEx.RegexParser</Name>
     </ProjectReference>

@@ -1,15 +1,8 @@
-﻿using StUtil.Extensions;
+﻿using StUtil.UI.Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Xml;
-using StUtil.Native.Extensions;
-using System.Diagnostics;
-using StUtil.UI.Utilities;
-using StUtil.UI.Controls;
 
 namespace StUtils.Renamer
 {
@@ -43,6 +36,13 @@ namespace StUtils.Renamer
             this.lblRename.MouseLeave += colorFaderLabel_MouseLeave;
             this.lblRename.Click += colorFaderLabel_Click;
             AddPage(this.lblRename, new ExpressionsPage());
+
+            this.FormClosing += Form1_FormClosing;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
 
         private void AddPage(Label lbl, Control page)

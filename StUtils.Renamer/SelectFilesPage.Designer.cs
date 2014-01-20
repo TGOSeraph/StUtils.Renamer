@@ -29,32 +29,33 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.llblAddChecked = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pnlFiles = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
             this.pnlExplorer = new System.Windows.Forms.Panel();
             this.explorerTreeView1 = new StUtil.UI.Controls.Explorer.ExplorerTreeView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.pnlFiles = new System.Windows.Forms.Panel();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.llblAddChecked = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.regexTextBox1 = new StUtils.Renamer.RegexTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lvAdded = new System.Windows.Forms.ListView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.pnlExplorer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pnlFiles.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.pnlExplorer.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -75,6 +76,38 @@
             this.splitContainer1.Size = new System.Drawing.Size(994, 469);
             this.splitContainer1.SplitterDistance = 219;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // pnlExplorer
+            // 
+            this.pnlExplorer.BackColor = System.Drawing.Color.White;
+            this.pnlExplorer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlExplorer.Controls.Add(this.explorerTreeView1);
+            this.pnlExplorer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlExplorer.Location = new System.Drawing.Point(5, 18);
+            this.pnlExplorer.Name = "pnlExplorer";
+            this.pnlExplorer.Padding = new System.Windows.Forms.Padding(0, 5, 5, 0);
+            this.pnlExplorer.Size = new System.Drawing.Size(209, 451);
+            this.pnlExplorer.TabIndex = 4;
+            // 
+            // explorerTreeView1
+            // 
+            this.explorerTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.explorerTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.explorerTreeView1.HideSelection = false;
+            this.explorerTreeView1.Location = new System.Drawing.Point(0, 5);
+            this.explorerTreeView1.Name = "explorerTreeView1";
+            this.explorerTreeView1.Size = new System.Drawing.Size(200, 442);
+            this.explorerTreeView1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Location = new System.Drawing.Point(5, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Explorer";
             // 
             // splitContainer2
             // 
@@ -97,63 +130,6 @@
             this.splitContainer2.Size = new System.Drawing.Size(771, 469);
             this.splitContainer2.SplitterDistance = 354;
             this.splitContainer2.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.llblAddChecked);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.regexTextBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(5, 429);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 40);
-            this.panel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(3, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Filter: (Regex)";
-            // 
-            // llblAddChecked
-            // 
-            this.llblAddChecked.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.llblAddChecked.AutoSize = true;
-            this.llblAddChecked.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblAddChecked.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.llblAddChecked.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.llblAddChecked.Location = new System.Drawing.Point(276, 4);
-            this.llblAddChecked.Name = "llblAddChecked";
-            this.llblAddChecked.Size = new System.Drawing.Size(75, 15);
-            this.llblAddChecked.TabIndex = 2;
-            this.llblAddChecked.TabStop = true;
-            this.llblAddChecked.Text = "Add checked";
-            this.llblAddChecked.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblAddChecked_LinkClicked);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Location = new System.Drawing.Point(5, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Files";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(5, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Selected Files";
             // 
             // pnlFiles
             // 
@@ -179,60 +155,42 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             // 
-            // label4
+            // panel1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Location = new System.Drawing.Point(5, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Explorer";
+            this.panel1.Controls.Add(this.llblAddChecked);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.regexTextBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(5, 429);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(344, 40);
+            this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // llblAddChecked
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.listView2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(5, 18);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.panel2.Size = new System.Drawing.Size(403, 451);
-            this.panel2.TabIndex = 4;
+            this.llblAddChecked.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.llblAddChecked.AutoSize = true;
+            this.llblAddChecked.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblAddChecked.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.llblAddChecked.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.llblAddChecked.Location = new System.Drawing.Point(276, 4);
+            this.llblAddChecked.Name = "llblAddChecked";
+            this.llblAddChecked.Size = new System.Drawing.Size(75, 15);
+            this.llblAddChecked.TabIndex = 2;
+            this.llblAddChecked.TabStop = true;
+            this.llblAddChecked.Text = "Add checked";
+            this.llblAddChecked.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblAddChecked_LinkClicked);
             // 
-            // listView2
+            // label1
             // 
-            this.listView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView2.Location = new System.Drawing.Point(5, 5);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(389, 437);
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.List;
-            // 
-            // pnlExplorer
-            // 
-            this.pnlExplorer.BackColor = System.Drawing.Color.White;
-            this.pnlExplorer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlExplorer.Controls.Add(this.explorerTreeView1);
-            this.pnlExplorer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlExplorer.Location = new System.Drawing.Point(5, 18);
-            this.pnlExplorer.Name = "pnlExplorer";
-            this.pnlExplorer.Padding = new System.Windows.Forms.Padding(0, 5, 5, 0);
-            this.pnlExplorer.Size = new System.Drawing.Size(209, 451);
-            this.pnlExplorer.TabIndex = 4;
-            // 
-            // explorerTreeView1
-            // 
-            this.explorerTreeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.explorerTreeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.explorerTreeView1.HideSelection = false;
-            this.explorerTreeView1.Location = new System.Drawing.Point(0, 5);
-            this.explorerTreeView1.Name = "explorerTreeView1";
-            this.explorerTreeView1.Size = new System.Drawing.Size(200, 442);
-            this.explorerTreeView1.TabIndex = 1;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Filter: (Regex)";
             // 
             // regexTextBox1
             // 
@@ -244,6 +202,55 @@
             this.regexTextBox1.TabIndex = 1;
             this.regexTextBox1.Text = "";
             this.regexTextBox1.TextChanged += new System.EventHandler(this.regexTextBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Location = new System.Drawing.Point(5, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Files";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.lvAdded);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(5, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.panel2.Size = new System.Drawing.Size(403, 451);
+            this.panel2.TabIndex = 4;
+            // 
+            // listView2
+            // 
+            this.lvAdded.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvAdded.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.lvAdded.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvAdded.Location = new System.Drawing.Point(5, 5);
+            this.lvAdded.Name = "listView2";
+            this.lvAdded.Size = new System.Drawing.Size(389, 437);
+            this.lvAdded.TabIndex = 1;
+            this.lvAdded.UseCompatibleStateImageBehavior = false;
+            this.lvAdded.View = System.Windows.Forms.View.Details;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Location = new System.Drawing.Point(5, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Selected Files";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Files";
             // 
             // SelectFilesPage
             // 
@@ -257,17 +264,17 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.pnlExplorer.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.pnlFiles.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlFiles.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.pnlExplorer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -286,9 +293,10 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lvAdded;
         private System.Windows.Forms.Panel pnlExplorer;
         private StUtil.UI.Controls.Explorer.ExplorerTreeView explorerTreeView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
 
 
 

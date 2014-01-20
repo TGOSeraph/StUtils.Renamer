@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StUtil.UI.Controls.Explorer;
 using System.IO;
+using StUtil.Native.Extensions;
 
 namespace StUtils.Renamer
 {
@@ -21,10 +22,19 @@ namespace StUtils.Renamer
         {
             InitializeComponent();
             this.explorerTreeView1.AfterSelect += explorerTreeView1_AfterSelect;
+            lvAdded.HeaderStyle = ColumnHeaderStyle.None;
+            regexTextBox1.Text = Properties.Settings.Default.Filter;
         }
 
         private void explorerTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            explorerTreeView1.SuspendDrawing();
+            if (!e.Node.IsExpanded)
+            {
+                e.Node.Expand();
+                e.Node.Collapse();
+            }
+            explorerTreeView1.ResumeDrawing();
             listView1.Items.Clear();
             string path = ((ShellItem)e.Node.Tag).Path;
             if (!string.IsNullOrWhiteSpace(path))
@@ -57,6 +67,7 @@ namespace StUtils.Renamer
                 {
                     lvi.Checked = currentExpression.IsMatch(lvi.Text);
                 }
+                Properties.Settings.Default.Filter = regexTextBox1.Text;
             }
             catch (Exception)
             {
@@ -67,11 +78,12 @@ namespace StUtils.Renamer
         {
             foreach (ListViewItem lvi in listView1.CheckedItems)
             {
-                if (!listView2.Items.Cast<ListViewItem>().Any(v => v.Text == (string)lvi.Tag))
+                if (!lvAdded.Items.Cast<ListViewItem>().Any(v => v.Text == (string)lvi.Tag))
                 {
-                    listView2.Items.Add(new ListViewItem((string)lvi.Tag));
+                    lvAdded.Items.Add(new ListViewItem((string)lvi.Tag));
                 }
             }
+            lvAdded.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
         }
     }
 }

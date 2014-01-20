@@ -1,17 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtils.Renamer", "StUtils.Renamer\StUtils.Renamer.csproj", "{2840D9FE-DC8B-4B63-AC52-2470DDADCB1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtilEx.RegexParser", "..\StUtil\StUtilEx.RegexParser\StUtilEx.RegexParser.csproj", "{C0FAE9FE-6051-4D54-9A74-362E31FF928F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtilEx.RegexParser", "..\..\APIs\StUtil\StUtilEx.RegexParser\StUtilEx.RegexParser.csproj", "{C0FAE9FE-6051-4D54-9A74-362E31FF928F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtil.UI", "..\StUtil\StUtil.UI\StUtil.UI.csproj", "{D82C9D9C-EB79-4C4B-AFBF-60811F1540E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtil.UI", "..\..\APIs\StUtil\StUtil.UI\StUtil.UI.csproj", "{D82C9D9C-EB79-4C4B-AFBF-60811F1540E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtil.Native", "..\StUtil\StUtil.Native\StUtil.Native.csproj", "{FF84F30F-A046-4325-8E3B-8362193250A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtil.Native", "..\..\APIs\StUtil\StUtil.Native\StUtil.Native.csproj", "{FF84F30F-A046-4325-8E3B-8362193250A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtil.Core", "..\StUtil\StUtil.Core\StUtil.Core.csproj", "{23BE9E56-B59D-48C2-9ACA-336B591C8FE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StUtil.Core", "..\..\APIs\StUtil\StUtil.Core\StUtil.Core.csproj", "{23BE9E56-B59D-48C2-9ACA-336B591C8FE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
