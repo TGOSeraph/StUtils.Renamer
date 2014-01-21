@@ -113,6 +113,9 @@ namespace StUtils.Renamer
         public SyntaxFormat SyntaxHighlighting { get; private set; }
         public bool HasRegexError { get; private set; }
 
+        private RegexPart _parts;
+        public RegexPart Parts { get { return _parts; } }
+
         public override string Text
         {
             get
@@ -299,11 +302,11 @@ namespace StUtils.Renamer
             int start = this.SelectionStart;
             try
             {
-                RegexPart parsed = parser.Parse(this.Text);
+                _parts = parser.Parse(this.Text);
 
                 Stack<RegexPart> parts = new Stack<RegexPart>();
                 Stack<RegexPart> lastChildren = new Stack<RegexPart>();
-                parts.Push(parsed);
+                parts.Push(_parts);
 
                 while (parts.Count > 0)
                 {
@@ -356,6 +359,15 @@ namespace StUtils.Renamer
             this.SelectionStart = start;
             Highlight();
             this.ResumeDrawing();
+        }
+
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.R)
+            {
+                groupColours = new List<Color>();
+            }
+            base.OnKeyDown(e);
         }
 
         private void ResetBackFormat(RegexPart p)

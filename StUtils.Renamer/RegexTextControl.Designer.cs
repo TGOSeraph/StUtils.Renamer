@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.regexTextBox1 = new StUtils.Renamer.RegexTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // regexTextBox1
@@ -62,6 +64,7 @@
         #endregion
 
         private RegexTextBox regexTextBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

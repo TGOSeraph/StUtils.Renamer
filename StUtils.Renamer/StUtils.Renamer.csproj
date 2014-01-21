@@ -47,6 +47,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Page.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PreviewPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PreviewPage.Designer.cs">
+      <DependentUpon>PreviewPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExpressionsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,6 +85,12 @@
     <Compile Include="SelectFilesPage.Designer.cs">
       <DependentUpon>SelectFilesPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ExpressionsPage.resx">
+      <DependentUpon>ExpressionsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreviewPage.resx">
+      <DependentUpon>PreviewPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -123,6 +138,9 @@
       <Project>{c0fae9fe-6051-4d54-9a74-362e31ff928f}</Project>
       <Name>StUtilEx.RegexParser</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

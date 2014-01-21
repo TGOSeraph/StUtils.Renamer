@@ -30,12 +30,12 @@ namespace StUtils.Renamer
             this.lblPreview.MouseEnter += colorFaderLabel_MouseEnter;
             this.lblPreview.MouseLeave += colorFaderLabel_MouseLeave;
             this.lblPreview.Click += colorFaderLabel_Click;
-            AddPage(this.lblPreview, new ExpressionsPage());
+            AddPage(this.lblPreview, new PreviewPage());
 
             this.lblRename.MouseEnter += colorFaderLabel_MouseEnter;
             this.lblRename.MouseLeave += colorFaderLabel_MouseLeave;
             this.lblRename.Click += colorFaderLabel_Click;
-            AddPage(this.lblRename, new ExpressionsPage());
+            AddPage(this.lblRename, new PreviewPage());
 
             this.FormClosing += Form1_FormClosing;
         }

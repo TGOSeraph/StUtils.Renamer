@@ -22,8 +22,17 @@ namespace StUtils.Renamer
         {
             InitializeComponent();
             this.explorerTreeView1.AfterSelect += explorerTreeView1_AfterSelect;
+            this.explorerTreeView1.NodeMouseClick += explorerTreeView1_NodeMouseClick;
             lvAdded.HeaderStyle = ColumnHeaderStyle.None;
             regexTextBox1.Text = Properties.Settings.Default.Filter;
+        }
+
+        private void explorerTreeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                explorerTreeView1.SelectedNode = e.Node;
+            }
         }
 
         private void explorerTreeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -52,8 +61,6 @@ namespace StUtils.Renamer
                 }
                 catch (Exception)
                 {
-
-                    throw;
                 }
             }
         }
@@ -74,16 +81,112 @@ namespace StUtils.Renamer
             }
         }
 
+        private void AddItem(ListViewItem lvi)
+        {
+            if (!lvAdded.Items.Cast<ListViewItem>().Any(v => v.Text == (string)lvi.Tag))
+            {
+                lvAdded.Items.Add(new ListViewItem((string)lvi.Tag));
+            }
+        }
         private void llblAddChecked_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             foreach (ListViewItem lvi in listView1.CheckedItems)
             {
-                if (!lvAdded.Items.Cast<ListViewItem>().Any(v => v.Text == (string)lvi.Tag))
-                {
-                    lvAdded.Items.Add(new ListViewItem((string)lvi.Tag));
-                }
+                AddItem(lvi);
             }
             lvAdded.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+        }
+
+        private void checkSelectedFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in listView1.SelectedItems)
+            {
+                lvi.Checked = true;
+            }
+        }
+
+        private void uncheckSelectedFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in listView1.SelectedItems)
+            {
+                lvi.Checked = false;
+            }
+        }
+
+        private void toggleCheckOnSelectedFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in listView1.SelectedItems)
+            {
+                lvi.Checked = !lvi.Checked;
+            }
+        }
+
+        private void addSelectedFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in listView1.SelectedItems)
+            {
+                AddItem(lvi);
+            }
+            lvAdded.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+        }
+
+        private void removeSelectedFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in lvAdded.SelectedItems)
+            {
+                lvAdded.Items.Remove(lvi);
+            }
+            lvAdded.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+        }
+
+        private void AddFilesInPath(string path, bool recurse)
+        {
+            if (!string.IsNullOrWhiteSpace(path))
+            {
+                try
+                {
+                    if (Directory.Exists(path))
+                    {
+                        foreach (string file in Directory.GetFiles(path))
+                        {
+                            AddItem(new ListViewItem(Path.GetFileName(file))
+                            {
+                                Tag = file
+                            });
+                        }
+                        if (recurse)
+                        {
+                            foreach (string dir in Directory.GetDirectories(path))
+                            {
+                                AddFilesInPath(dir, recurse);
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+
+        private void addFilesInFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (explorerTreeView1.SelectedNode != null)
+            {
+                string path = ((ShellItem)explorerTreeView1.SelectedNode.Tag).Path;
+                AddFilesInPath(path, false);
+                lvAdded.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            }
+        }
+
+        private void addFilesInFolderRecursiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (explorerTreeView1.SelectedNode != null)
+            {
+                string path = ((ShellItem)explorerTreeView1.SelectedNode.Tag).Path;
+                AddFilesInPath(path, true);
+                lvAdded.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            }
         }
     }
 }
