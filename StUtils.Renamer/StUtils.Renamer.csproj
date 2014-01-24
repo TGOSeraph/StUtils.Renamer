@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExpressionItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExpressionItem.Designer.cs">
+      <DependentUpon>ExpressionItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Page.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -79,12 +85,18 @@
     <Compile Include="RegexTextControl.Designer.cs">
       <DependentUpon>RegexTextControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="RichTextBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SelectFilesPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SelectFilesPage.Designer.cs">
       <DependentUpon>SelectFilesPage.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ExpressionItem.resx">
+      <DependentUpon>ExpressionItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExpressionsPage.resx">
       <DependentUpon>ExpressionsPage.cs</DependentUpon>
     </EmbeddedResource>

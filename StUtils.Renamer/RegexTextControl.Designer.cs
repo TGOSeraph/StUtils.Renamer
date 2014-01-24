@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.regexTextBox1 = new StUtils.Renamer.RegexTextBox();
+            this.RegexTextBox = new StUtils.Renamer.RegexTextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
-            // regexTextBox1
+            // RegexTextBox
             // 
-            this.regexTextBox1.AutoWordSelection = true;
-            this.regexTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.regexTextBox1.DetectUrls = false;
-            this.regexTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.regexTextBox1.Font = new System.Drawing.Font("Consolas", 10F);
-            this.regexTextBox1.Location = new System.Drawing.Point(4, 3);
-            this.regexTextBox1.Name = "regexTextBox1";
-            this.regexTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
-            this.regexTextBox1.Size = new System.Drawing.Size(586, 24);
-            this.regexTextBox1.TabIndex = 1;
-            this.regexTextBox1.Text = "";
-            this.regexTextBox1.WordWrap = false;
+            this.RegexTextBox.AutoWordSelection = true;
+            this.RegexTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RegexTextBox.DetectUrls = false;
+            this.RegexTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RegexTextBox.Font = new System.Drawing.Font("Consolas", 10F);
+            this.RegexTextBox.Location = new System.Drawing.Point(4, 3);
+            this.RegexTextBox.Name = "RegexTextBox";
+            this.RegexTextBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.RegexTextBox.Size = new System.Drawing.Size(586, 24);
+            this.RegexTextBox.TabIndex = 1;
+            this.RegexTextBox.Text = "";
+            this.RegexTextBox.WordWrap = false;
             // 
             // RegexTextControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.regexTextBox1);
+            this.Controls.Add(this.RegexTextBox);
             this.Name = "RegexTextControl";
             this.Padding = new System.Windows.Forms.Padding(4, 3, 4, 0);
             this.Size = new System.Drawing.Size(594, 27);
@@ -63,8 +63,8 @@
 
         #endregion
 
-        private RegexTextBox regexTextBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        public RegexTextBox RegexTextBox;
 
     }
 }

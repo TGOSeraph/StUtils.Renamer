@@ -15,8 +15,8 @@ namespace StUtils.Renamer
         {
             InitializeComponent();
 
-            this.regexTextBox1.TextChanged += regexTextBox1_TextChanged;
-            this.regexTextBox1.MouseHover += regexTextBox1_MouseHover;
+            this.RegexTextBox.TextChanged += regexTextBox1_TextChanged;
+            this.RegexTextBox.MouseHover += regexTextBox1_MouseHover;
         }
 
         private static string AddSpacesToSentence(string text, bool preserveAcronyms)
@@ -39,9 +39,9 @@ namespace StUtils.Renamer
 
         private RegexPart GetPartUnderMouse()
         {
-            Point pt = regexTextBox1.PointToClient(Cursor.Position);
-            int index = regexTextBox1.GetCharIndexFromPosition(pt);
-            RegexPart part = regexTextBox1.Parts;
+            Point pt = RegexTextBox.PointToClient(Cursor.Position);
+            int index = RegexTextBox.GetCharIndexFromPosition(pt);
+            RegexPart part = RegexTextBox.Parts;
             while (true)
             {
                 bool found = false;
@@ -64,18 +64,18 @@ namespace StUtils.Renamer
         private void regexTextBox1_MouseHover(object sender, EventArgs e)
         {
             RegexPart part = GetPartUnderMouse();
-            Point pt = regexTextBox1.PointToClient(Cursor.Position);
+            Point pt = RegexTextBox.PointToClient(Cursor.Position);
             if (part.Type != PartType.Root)
             {
                 toolTip1.Show(part.Error != ErrorType.None
                     ? (AddSpacesToSentence(part.Error.ToString(), true) + " (" + AddSpacesToSentence(part.Type.ToString(), true) + ")")
-                    : AddSpacesToSentence(part.Type.ToString(), true), regexTextBox1, new Point(pt.X, regexTextBox1.Bottom), 3000);
+                    : AddSpacesToSentence(part.Type.ToString(), true), RegexTextBox, new Point(pt.X, RegexTextBox.Bottom), 3000);
             }
         }
 
         private void regexTextBox1_TextChanged(object sender, EventArgs e)
         {
-            bool isVisible = regexTextBox1.IsHScrollVisible();
+            bool isVisible = RegexTextBox.IsHScrollVisible();
             if (isVisible && !hScrollVisible)
             {
                 this.Height += SystemInformation.HorizontalScrollBarHeight;

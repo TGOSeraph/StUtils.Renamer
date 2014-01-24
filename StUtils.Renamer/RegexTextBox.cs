@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace StUtils.Renamer
 {
-    public class RegexTextBox : RichTextBox
+    public class RegexTextBox : RichTextBoxEx
     {
         public class SyntaxFormat
         {
@@ -307,7 +307,7 @@ namespace StUtils.Renamer
                 Stack<RegexPart> parts = new Stack<RegexPart>();
                 Stack<RegexPart> lastChildren = new Stack<RegexPart>();
                 parts.Push(_parts);
-
+                HasRegexError = false;
                 while (parts.Count > 0)
                 {
                     RegexPart p = parts.Pop();
