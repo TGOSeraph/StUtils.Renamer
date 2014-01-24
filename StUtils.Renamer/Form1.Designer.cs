@@ -32,15 +32,15 @@ namespace StUtils.Renamer
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.pnlBottomRight = new System.Windows.Forms.Panel();
-            this.pgbProgress = new StUtil.UI.Controls.DarkBlueProgressBar();
             this.pnlBottomLeft = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pnlBottomBorder = new System.Windows.Forms.Panel();
             this.pnlStage = new System.Windows.Forms.Panel();
-            this.lblRename = new ColorFaderLabel();
-            this.lblPreview = new ColorFaderLabel();
-            this.lblDefineExpressions = new ColorFaderLabel();
-            this.lblSelectFiles = new ColorFaderLabel();
+            this.lblRename = new StUtil.UI.Controls.ColorFaderLabel();
+            this.lblPreview = new StUtil.UI.Controls.ColorFaderLabel();
+            this.lblDefineExpressions = new StUtil.UI.Controls.ColorFaderLabel();
+            this.lblSelectFiles = new StUtil.UI.Controls.ColorFaderLabel();
+            this.pgbProgress = new StUtil.UI.Controls.DarkBlueProgressBar();
             this.pnlBottom.SuspendLayout();
             this.pnlBottomRight.SuspendLayout();
             this.pnlBottomLeft.SuspendLayout();
@@ -65,32 +65,6 @@ namespace StUtils.Renamer
             this.pnlBottomRight.Padding = new System.Windows.Forms.Padding(0, 5, 10, 5);
             this.pnlBottomRight.Size = new System.Drawing.Size(1121, 30);
             this.pnlBottomRight.TabIndex = 14;
-            // 
-            // pgbProgress
-            // 
-            this.pgbProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
-            this.pgbProgress.BarImage = ((System.Drawing.Image)(resources.GetObject("pgbProgress.BarImage")));
-            this.pgbProgress.BarMargins = new System.Windows.Forms.Padding(10, 2, 50, 2);
-            this.pgbProgress.CustomLabel = null;
-            this.pgbProgress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pgbProgress.DrawLabel = true;
-            this.pgbProgress.EnableAnimation = false;
-            this.pgbProgress.Font = new System.Drawing.Font("Calibri", 10.5F);
-            this.pgbProgress.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(78)))));
-            this.pgbProgress.GradientInnerModifier = ((sbyte)(0));
-            this.pgbProgress.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(21)))));
-            this.pgbProgress.LabelOffset = new System.Drawing.Point(11, -7);
-            this.pgbProgress.LabelOffsetX = StUtil.UI.Controls.CustomProgressBar.LabelXOffsetEnum.FromBarRight;
-            this.pgbProgress.LabelOffsetY = StUtil.UI.Controls.CustomProgressBar.LabelYOffsetEnum.FromBarMiddle;
-            this.pgbProgress.LabelOfString = "/";
-            this.pgbProgress.LabelType = StUtil.UI.Controls.CustomProgressBar.LabelTypeEnum.Percent;
-            this.pgbProgress.Location = new System.Drawing.Point(0, 5);
-            this.pgbProgress.MaxValue = ((long)(100));
-            this.pgbProgress.Name = "pgbProgress";
-            this.pgbProgress.Size = new System.Drawing.Size(1111, 20);
-            this.pgbProgress.Step = ((long)(1));
-            this.pgbProgress.TabIndex = 1;
-            this.pgbProgress.Value = ((long)(0));
             // 
             // pnlBottomLeft
             // 
@@ -208,6 +182,32 @@ namespace StUtils.Renamer
             this.lblSelectFiles.Tag = "";
             this.lblSelectFiles.Text = "Select Files";
             // 
+            // pgbProgress
+            // 
+            this.pgbProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(43)))), ((int)(((byte)(47)))));
+            this.pgbProgress.BarImage = ((System.Drawing.Image)(resources.GetObject("pgbProgress.BarImage")));
+            this.pgbProgress.BarMargins = new System.Windows.Forms.Padding(10, 2, 50, 2);
+            this.pgbProgress.CustomLabel = null;
+            this.pgbProgress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pgbProgress.DrawLabel = true;
+            this.pgbProgress.EnableAnimation = false;
+            this.pgbProgress.Font = new System.Drawing.Font("Calibri", 10.5F);
+            this.pgbProgress.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(75)))), ((int)(((byte)(78)))));
+            this.pgbProgress.GradientInnerModifier = ((sbyte)(0));
+            this.pgbProgress.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(19)))), ((int)(((byte)(21)))));
+            this.pgbProgress.LabelOffset = new System.Drawing.Point(11, -7);
+            this.pgbProgress.LabelOffsetX = StUtil.UI.Controls.CustomProgressBar.LabelXOffsetEnum.FromBarRight;
+            this.pgbProgress.LabelOffsetY = StUtil.UI.Controls.CustomProgressBar.LabelYOffsetEnum.FromBarMiddle;
+            this.pgbProgress.LabelOfString = "/";
+            this.pgbProgress.LabelType = StUtil.UI.Controls.CustomProgressBar.LabelTypeEnum.Percent;
+            this.pgbProgress.Location = new System.Drawing.Point(0, 5);
+            this.pgbProgress.MaxValue = ((long)(100));
+            this.pgbProgress.Name = "pgbProgress";
+            this.pgbProgress.Size = new System.Drawing.Size(1111, 20);
+            this.pgbProgress.Step = ((long)(1));
+            this.pgbProgress.TabIndex = 1;
+            this.pgbProgress.Value = ((long)(0));
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -225,7 +225,7 @@ namespace StUtils.Renamer
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.MinimumSize = new System.Drawing.Size(700, 300);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "StUtils Renamer";
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
             this.pnlBottomRight.ResumeLayout(false);
